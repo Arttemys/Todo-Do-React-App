@@ -1,5 +1,5 @@
 html {
-  background: #ddd;  
+  background: #020631;  
   height: 100%;
   display: flex;
 }
@@ -13,6 +13,18 @@ body {
   text-align: center;
 }
 
+/*Header*/
+svg {
+  transform: scale(1.5);
+}
+
+.today {
+  font-size: 25px;
+  color: #c23455;
+  margin-bottom: 3%;
+  margin-top: 4%;
+}
+
 .todo-list {
   background: #fff;
   font-size: 15px;
@@ -20,7 +32,9 @@ body {
   margin: auto;
   margin-bottom: 20px;
   padding: 8px 16px;
-  box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(255,255,255,0.4);
+  color: #076b74;
 }
 
 /*Buttons*/
@@ -58,6 +72,13 @@ $colorBlueHover: #166b72;
 .file-input {
   padding: 2px;
   background: #f8f8f8;
+  // border: 1px solid #25b0bc;
+  // border-radius: 5px;
+}
+
+.file-input:hover {
+  border: 1px solid #25b0bc;
+  border-radius: 5px;
 }
 
 .file-input > .text {
@@ -103,7 +124,7 @@ $colortextChecked: #a5e7ec;
 .todo__text {
   color: $colorText;
   text-align: left;
-  font-size: 30px;
+  font-size: 25px;
   transition: all $duration/2 linear $duration/2;
 }
 
