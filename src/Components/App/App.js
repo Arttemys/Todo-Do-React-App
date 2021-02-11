@@ -1,5 +1,6 @@
 import './App.scss';
 import Container from '../Container/Container';
+import DarkMode from '../Mode/Mode';
 
 var d = new Date();
 
@@ -34,6 +35,7 @@ var randomWord = randomWordArray[Math.floor(Math.random() * randomWordArray.leng
 function App() {
   return (
       <div className="App">
+        <DarkMode className="DarkToggle"/>
           <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <desc>Created with Sketch.</desc>
             <defs>

@@ -1,11 +1,108 @@
+/*DarkMode*/
+
 html {
-  background: #020631;  
+  // background: #020631;
+  // background: #ddd;  
   height: 100%;
   display: flex;
+
+  --primaryTextColor: black;
+  --primaryBackgroundColor: #ddd;
+  --primaryBoxShadow: 0 5px 30px rgba(0,0,0,0.4);
+
+  // background: var(--primaryBackgroundColor);
+
 }
+
+html.dark {
+  height: 100%;
+  display: flex;
+
+  --primaryTextColor: #c23455;
+  --primaryBackgroundColor: #020631;
+  --primaryBoxShadow: 0 5px 30px rgba(255,255,255,0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --primaryTextColor: #c23455;
+    --primaryBackgroundColor: #020631;
+    --primaryBoxShadow: 0 5px 30px rgba(255,255,255,0.4);
+
+  }
+}
+
+/*DarkMode Toggle*/
+
+.darktoggle{
+  position: absolute;
+  top: 2%;
+  right: 1%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 body {
   width: 100%;
   margin: auto;
+  background: var(--primaryBackgroundColor);
 }
 
 .App {
@@ -20,7 +117,7 @@ svg:first-child {
 
 .today {
   font-size: 25px;
-  color: #c23455;
+  color: var(--primaryTextColor);
   margin-bottom: 3%;
   margin-top: 4%;
 }
@@ -35,7 +132,7 @@ svg:first-child {
   margin-bottom: 20px;
   padding: 8px 16px;
   border-radius: 5px;
-  box-shadow: 0 5px 30px rgba(255,255,255,0.4);
+  box-shadow: var(--primaryBoxShadow);
   color: #000;
 }
 
@@ -124,6 +221,7 @@ $colortextChecked: #a5e7ec;
 .todo__text {
   color: $colorText;
   text-align: left;
+  text-transform: capitalize;
   font-size: 25px;  
   transition: all $duration/2 linear $duration/2;
 }
